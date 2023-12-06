@@ -1,0 +1,1985 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2023.2" RunE2="T">
+  <Nodes>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="570" width="984" height="420" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Upload to S3 bucket and send a confirmation email</Text>
+          <Font name="Arial" size="11.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="70">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="714" y="54" width="324" height="228" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Set target email adress</Text>
+          <Font name="Arial" size="11.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="64">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="714" y="306" width="324" height="240" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>If HTTP Status is different than 200 (OK), send a notification email with error message from the API</Text>
+          <Font name="Arial" size="11.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="306" width="636" height="240" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Clean the data
+
+    - Clean AGE column: remove records with negative values, outliers and missing values
+    - Add FULL NAME, AGE_GROUP and IS_DEAD column</Text>
+          <Font name="Arial" size="11.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="54" width="636" height="228" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Get the data with API</Text>
+          <Font name="Arial" size="11.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxConnectorGui.Download.Download">
+        <Position x="282" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <URLField>base_url</URLField>
+          <OutputMode>String</OutputMode>
+          <CodePage>65001</CodePage>
+          <EncodeURLs value="True" />
+          <Headers>
+            <NameValues>
+              <Item name="Authorization" value="Bearer 1q2w3e4r5t" />
+            </NameValues>
+            <Fields orderChanged="False">
+              <Field name="base_url" selected="False" />
+              <Field name="Authorization" selected="False" />
+              <Field name="FileName" selected="False" />
+              <Field name="current_date_time_utc" selected="False" />
+              <Field name="date" selected="False" />
+              <Field name="start_time" selected="False" />
+              <Field name="end_time" selected="False" />
+              <Field name="output_file_name" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </Fields>
+          </Headers>
+          <Payload>
+            <HTTPAction>GET</HTTPAction>
+            <QueryStringBodyMode>Compose</QueryStringBodyMode>
+            <ComposeNameValues />
+            <ComposeFields orderChanged="False">
+              <Field name="date" />
+              <Field name="start_time" />
+              <Field name="end_time" />
+              <Field name="base_url" selected="False" />
+              <Field name="Authorization" selected="False" />
+              <Field name="FileName" selected="False" />
+              <Field name="current_date_time_utc" selected="False" />
+              <Field name="output_file_name" selected="False" />
+              <Field name="*Unknown" selected="False" />
+            </ComposeFields>
+          </Payload>
+          <numConnections>2</numConnections>
+          <Timeout>600</Timeout>
+          <EnableRPM value="False" />
+          <DcmAdvancedAuth value="False" />
+          <Password />
+          <UserName />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Fetch the data</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="base_url" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\config\api_header_config.txt" type="V_WString" />
+            <Field name="Authorization" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\config\api_header_config.txt" type="V_WString" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+            <Field name="current_date_time_utc" source="Formula: DateTimeToUTC(DateTimeNow())" type="DateTime" />
+            <Field name="date" size="1073741823" source="Formula: DateTimeFormat([current_date_time_utc], '%d-%m-%Y')" type="V_WString" />
+            <Field name="start_time" size="1073741823" source="Formula: DateTimeFormat(DateTimeAdd([current_date_time_utc],-1,'hours'),&quot;%H&quot;) + &quot;:00&quot;&#xA;" type="V_WString" />
+            <Field name="end_time" size="1073741823" source="Formula: DateTimeFormat(DateTimeAdd([current_date_time_utc],-1,'hours'),&quot;%H&quot;) + &quot;:59&quot;" type="V_WString" />
+            <Field name="output_file_name" size="1073741823" source="Formula: [date] + &quot;_&quot; + left([start_time], 2) + &quot;.csv&quot;" type="V_WString" />
+            <Field name="DownloadData" size="1073741823" source="Download" type="V_WString" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxConnectorEngine.dll" EngineDllEntryPoint="AlteryxDownload" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="174" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="DateTimeToUTC(DateTimeNow())" field="current_date_time_utc" size="19" type="DateTime" />
+            <FormulaField expression="DateTimeFormat([current_date_time_utc], '%d-%m-%Y')" field="date" size="1073741823" type="V_WString" />
+            <FormulaField expression="DateTimeFormat(DateTimeAdd([current_date_time_utc],-1,'hours'),&quot;%H&quot;) + &quot;:00&quot;&#xA;" field="start_time" size="1073741823" type="V_WString" />
+            <FormulaField expression="DateTimeFormat(DateTimeAdd([current_date_time_utc],-1,'hours'),&quot;%H&quot;) + &quot;:59&quot;" field="end_time" size="1073741823" type="V_WString" />
+            <FormulaField expression="[date] + &quot;_&quot; + left([start_time], 2) + &quot;.csv&quot;" field="output_file_name" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Add HTTP request parameters: date, start_hour, end_hour</AnnotationText>
+          <DefaultAnnotationText>current_date_time_utc = DateTimeToUTC(DateTimeNow())
+date = DateTimeFormat([curr...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="base_url" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\alteryx_workflow_config.txt" type="V_WString" />
+            <Field name="Authorization" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\alteryx_workflow_config.txt" type="V_WString" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+            <Field name="current_date_time_utc" source="Formula: DateTimeToUTC(DateTimeNow())" type="DateTime" />
+            <Field name="date" size="1073741823" source="Formula: DateTimeFormat([current_date_time_utc], '%d-%m-%Y')" type="V_WString" />
+            <Field name="start_time" size="1073741823" source="Formula: DateTimeFormat(DateTimeAdd([current_date_time_utc],-1,'hours'),&quot;%H&quot;) + &quot;:00&quot;&#xA;" type="V_WString" />
+            <Field name="end_time" size="1073741823" source="Formula: DateTimeFormat(DateTimeAdd([current_date_time_utc],-1,'hours'),&quot;%H&quot;) + &quot;:59&quot;" type="V_WString" />
+            <Field name="output_file_name" size="1073741823" source="Formula: [date] + &quot;_&quot; + left([start_time], 2) + &quot;.csv&quot;" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.JSONParse.JSONParse">
+        <Position x="378" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <JSON_Field>DownloadData</JSON_Field>
+          <IncludeInOutput value="False" />
+          <SingleField value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Unpack from JSON</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="base_url" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\alteryx_workflow_config.txt" type="V_WString" />
+            <Field name="Authorization" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\alteryx_workflow_config.txt" type="V_WString" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+            <Field name="current_date_time_utc" source="Formula: DateTimeToUTC(DateTimeNow())" type="DateTime" />
+            <Field name="date" size="1073741823" source="Formula: DateTimeFormat([current_date_time_utc], '%d-%m-%Y')" type="V_WString" />
+            <Field name="start_time" size="1073741823" source="Formula: DateTimeFormat(DateTimeAdd([current_date_time_utc],-1,'hours'),&quot;%H&quot;) + &quot;:00&quot;&#xA;" type="V_WString" />
+            <Field name="end_time" size="1073741823" source="Formula: DateTimeFormat(DateTimeAdd([current_date_time_utc],-1,'hours'),&quot;%H&quot;) + &quot;:59&quot;" type="V_WString" />
+            <Field name="output_file_name" size="1073741823" source="Formula: [date] + &quot;_&quot; + left([start_time], 2)" type="V_WString" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+            <Field name="JSON_Name" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSON_Parse" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJSONParse" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="114" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="REGEX_Replace([JSON_Name], '\D', &quot;&quot;)&#xA;" field="Record ID" size="1073741823" type="V_WString" />
+            <FormulaField expression="REGEX_Replace([JSON_Name], '^(\d+)\.', '')" field="JSON_Name" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Split into Record ID and column name</AnnotationText>
+          <DefaultAnnotationText>Record ID = REGEX_Replace([JSON_Name], '\D', "")
+
+JSON_Name = REGEX_Replace([JSO...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="base_url" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\alteryx_workflow_config.txt" type="V_WString" />
+            <Field name="Authorization" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\alteryx_workflow_config.txt" type="V_WString" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+            <Field name="current_date_time_utc" source="Formula: DateTimeToUTC(DateTimeNow())" type="DateTime" />
+            <Field name="date" size="1073741823" source="Formula: DateTimeFormat([current_date_time_utc], '%d-%m-%Y')" type="V_WString" />
+            <Field name="start_time" size="1073741823" source="Formula: DateTimeFormat(DateTimeAdd([current_date_time_utc],-1,'hours'),&quot;%H&quot;) + &quot;:00&quot;&#xA;" type="V_WString" />
+            <Field name="end_time" size="1073741823" source="Formula: DateTimeFormat(DateTimeAdd([current_date_time_utc],-1,'hours'),&quot;%H&quot;) + &quot;:59&quot;" type="V_WString" />
+            <Field name="output_file_name" size="1073741823" source="Formula: [date] + &quot;_&quot; + left([start_time], 2)" type="V_WString" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+            <Field name="JSON_Name" size="1073741823" source="Formula: REGEX_Replace([JSON_Name], '^(\d+)\.', '')" type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field description="TextToColumns: Parsed from DownloadHeaders" name="DownloadHeaders1" size="2147483647" source="TextToColumns: Parsed from DownloadHeaders" type="V_String" />
+            <Field description="TextToColumns: Parsed from DownloadHeaders" name="DownloadHeaders2" size="2147483647" source="TextToColumns: Parsed from DownloadHeaders" type="V_String" />
+            <Field name="Record ID" size="1073741823" source="Formula: REGEX_Replace([JSON_Name], '\D', &quot;&quot;)&#xA;" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="438" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!IsEmpty([AGE]) AND Between([AGE], 0, 122)</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Fix the AGE column</AnnotationText>
+          <DefaultAnnotationText>!IsEmpty([AGE]) AND Between([AGE], 0, 122)</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="output_file_name" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="AGE" source="JSON_Parse" type="Int64" />
+            <Field name="DATE_DIED" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="FIRST_NAME" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="INGESTION_DATETIME" source="JSON_Parse" type="Date" />
+            <Field name="LAST_NAME" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="SEX" size="1073741823" source="JSON_Parse" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="output_file_name" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="AGE" source="JSON_Parse" type="Int64" />
+            <Field name="DATE_DIED" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="FIRST_NAME" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="INGESTION_DATETIME" source="JSON_Parse" type="Date" />
+            <Field name="LAST_NAME" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="SEX" size="1073741823" source="JSON_Parse" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="558" y="402" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF [AGE] &lt;= 21 THEN [FIRST_NAME] + &quot; &quot; + [LAST_NAME]&#xA;ELSEIF [SEX] == 'Male' Then 'Mr. ' + [FIRST_NAME] + &quot; &quot; + [LAST_NAME]&#xA;ELSE 'Mrs. ' + [FIRST_NAME] + &quot; &quot; + [LAST_NAME]&#xA;ENDIF" field="FULL_NAME" size="1073741823" type="V_WString" />
+            <FormulaField expression="ToString(Floor([AGE] / 10) * 10) + &quot;-&quot; + ToString(Floor([AGE] / 10) * 10 + 9)&#xA;&#xA;" field="AGR_GROUP" size="1073741823" type="V_WString" />
+            <FormulaField expression="IIF([DATE_DIED] == '9999-99-99', 'True', 'False')" field="IS_DEAD" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Add new columns</AnnotationText>
+          <DefaultAnnotationText>FULL_NAME = IF [AGE] &lt;= 21 THEN [FIRST_NAME] + " " + [LAST_NAME]
+ELSEIF [SEX] ==...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="output_file_name" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="AGE" source="JSON_Parse" type="Int64" />
+            <Field name="DATE_DIED" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="FIRST_NAME" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="INGESTION_DATETIME" source="JSON_Parse" type="Date" />
+            <Field name="LAST_NAME" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="SEX" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="FULL_NAME" size="1073741823" source="Formula: IF [AGE] &lt;= 21 THEN [FIRST_NAME] + &quot; &quot; + [LAST_NAME]&#xA;ELSEIF [SEX] == 'Male' Then 'Mr. ' + [FIRST_NAME] + &quot; &quot; + [LAST_NAME]&#xA;ELSE 'Mrs. ' + [FIRST_NAME] + &quot; &quot; + [LAST_NAME]&#xA;ENDIF" type="V_WString" />
+            <Field name="AGR_GROUP" size="1073741823" source="Formula: ToString(Floor([AGE] / 10) * 10) + &quot;-&quot; + ToString(Floor([AGE] / 10) * 10 + 9)&#xA;&#xA;" type="V_WString" />
+            <Field name="IS_DEAD" size="1073741823" source="Formula: IIF([DATE_DIED] == '9999-99-99', 'True', 'False')" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="318" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Record ID" selected="False" />
+            <SelectField field="AGE" selected="True" type="Int64" size="8" />
+            <SelectField field="DATE_DIED" selected="True" size="2147483647" />
+            <SelectField field="INGESTION_DATETIME" selected="True" type="Date" size="10" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Set proper data types</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="output_file_name" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="AGE" source="JSON_Parse" type="Int64" />
+            <Field name="DATE_DIED" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="FIRST_NAME" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="INGESTION_DATETIME" source="JSON_Parse" type="Date" />
+            <Field name="LAST_NAME" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="SEX" size="1073741823" source="JSON_Parse" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="66" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="Path">.\config\api_header_config.txt</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28593</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Load Base URL and Auth Token</AnnotationText>
+          <DefaultAnnotationText>api_header_config.txt</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="base_url" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\config\api_header_config.txt" type="V_WString" />
+            <Field name="Authorization" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\config\api_header_config.txt" type="V_WString" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="210" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="output_file_name" />
+            <Field field="Record ID" />
+          </GroupFields>
+          <HeaderField field="JSON_Name" />
+          <DataField field="JSON_ValueString" />
+          <Methods>
+            <Method method="First" />
+            <Separator>,</Separator>
+            <FieldSize value="2048" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Transpose rows into colums</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="output_file_name" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="Record ID" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="AGE" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="DATE_DIED" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="FIRST_NAME" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="INGESTION_DATETIME" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="LAST_NAME" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="SEX" size="1073741823" source="JSON_Parse" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="44">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BlockUntilDone.BlockUntilDone">
+        <Position x="90" y="654" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="output_file_name" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="AGE" source="JSON_Parse" type="Int64" />
+            <Field name="DATE_DIED" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="FIRST_NAME" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="INGESTION_DATETIME" source="JSON_Parse" type="Date" />
+            <Field name="LAST_NAME" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="SEX" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="FULL_NAME" size="1073741823" source="Formula: IF [AGE] &lt;= 21 THEN [FIRST_NAME] + &quot; &quot; + [LAST_NAME]&#xA;ELSEIF [SEX] == 'Male' Then 'Mr. ' + [FIRST_NAME] + &quot; &quot; + [LAST_NAME]&#xA;ELSE 'Mrs. ' + [FIRST_NAME] + &quot; &quot; + [LAST_NAME]&#xA;ENDIF" type="V_WString" />
+            <Field name="AGR_GROUP" size="1073741823" source="Formula: ToString(Floor([AGE] / 10) * 10) + &quot;-&quot; + ToString(Floor([AGE] / 10) * 10 + 9)&#xA;&#xA;" type="V_WString" />
+            <Field name="IS_DEAD" size="1073741823" source="Formula: IIF([DATE_DIED] == '9999-99-99', 'True', 'False')" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Output2">
+          <RecordInfo>
+            <Field name="output_file_name" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="AGE" source="JSON_Parse" type="Int64" />
+            <Field name="DATE_DIED" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="FIRST_NAME" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="INGESTION_DATETIME" source="JSON_Parse" type="Date" />
+            <Field name="LAST_NAME" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="SEX" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="FULL_NAME" size="1073741823" source="Formula: IF [AGE] &lt;= 21 THEN [FIRST_NAME] + &quot; &quot; + [LAST_NAME]&#xA;ELSEIF [SEX] == 'Male' Then 'Mr. ' + [FIRST_NAME] + &quot; &quot; + [LAST_NAME]&#xA;ELSE 'Mrs. ' + [FIRST_NAME] + &quot; &quot; + [LAST_NAME]&#xA;ENDIF" type="V_WString" />
+            <Field name="AGR_GROUP" size="1073741823" source="Formula: ToString(Floor([AGE] / 10) * 10) + &quot;-&quot; + ToString(Floor([AGE] / 10) * 10 + 9)&#xA;&#xA;" type="V_WString" />
+            <Field name="IS_DEAD" size="1073741823" source="Formula: IIF([DATE_DIED] == '9999-99-99', 'True', 'False')" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Output3">
+          <RecordInfo>
+            <Field name="output_file_name" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="AGE" source="JSON_Parse" type="Int64" />
+            <Field name="DATE_DIED" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="FIRST_NAME" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="INGESTION_DATETIME" source="JSON_Parse" type="Date" />
+            <Field name="LAST_NAME" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="SEX" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="FULL_NAME" size="1073741823" source="Formula: IF [AGE] &lt;= 21 THEN [FIRST_NAME] + &quot; &quot; + [LAST_NAME]&#xA;ELSEIF [SEX] == 'Male' Then 'Mr. ' + [FIRST_NAME] + &quot; &quot; + [LAST_NAME]&#xA;ELSE 'Mrs. ' + [FIRST_NAME] + &quot; &quot; + [LAST_NAME]&#xA;ENDIF" type="V_WString" />
+            <Field name="AGR_GROUP" size="1073741823" source="Formula: ToString(Floor([AGE] / 10) * 10) + &quot;-&quot; + ToString(Floor([AGE] / 10) * 10 + 9)&#xA;&#xA;" type="V_WString" />
+            <Field name="IS_DEAD" size="1073741823" source="Formula: IIF([DATE_DIED] == '9999-99-99', 'True', 'False')" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBlockUntilDone" />
+    </Node>
+    <Node ToolID="60">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="486" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>DownloadHeaders</Field>
+          <ErrorHandling>Ignore</ErrorHandling>
+          <RootName>DownloadHeaders</RootName>
+          <Delimeters value="\n" />
+          <NumFields value="2" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="base_url" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\alteryx_workflow_config.txt" type="V_WString" />
+            <Field name="Authorization" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\alteryx_workflow_config.txt" type="V_WString" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+            <Field name="current_date_time_utc" source="Formula: DateTimeToUTC(DateTimeNow())" type="DateTime" />
+            <Field name="date" size="1073741823" source="Formula: DateTimeFormat([current_date_time_utc], '%d-%m-%Y')" type="V_WString" />
+            <Field name="start_time" size="1073741823" source="Formula: DateTimeFormat(DateTimeAdd([current_date_time_utc],-1,'hours'),&quot;%H&quot;) + &quot;:00&quot;&#xA;" type="V_WString" />
+            <Field name="end_time" size="1073741823" source="Formula: DateTimeFormat(DateTimeAdd([current_date_time_utc],-1,'hours'),&quot;%H&quot;) + &quot;:59&quot;" type="V_WString" />
+            <Field name="output_file_name" size="1073741823" source="Formula: [date] + &quot;_&quot; + left([start_time], 2)" type="V_WString" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+            <Field name="JSON_Name" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field description="TextToColumns: Parsed from DownloadHeaders" name="DownloadHeaders1" size="2147483647" source="TextToColumns: Parsed from DownloadHeaders" type="V_String" />
+            <Field description="TextToColumns: Parsed from DownloadHeaders" name="DownloadHeaders2" size="2147483647" source="TextToColumns: Parsed from DownloadHeaders" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="61">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="594" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>NotContains</Operator>
+            <Field>DownloadHeaders1</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2023-12-05 15:24:34</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>200 OK</Operand>
+              <StartDate>2023-12-05 15:24:34</StartDate>
+              <EndDate>2023-12-05 15:24:34</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Check HTTP Status Code</AnnotationText>
+          <DefaultAnnotationText>!Contains([DownloadHeaders1],"200 OK")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="base_url" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\alteryx_workflow_config.txt" type="V_WString" />
+            <Field name="Authorization" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\alteryx_workflow_config.txt" type="V_WString" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+            <Field name="current_date_time_utc" source="Formula: DateTimeToUTC(DateTimeNow())" type="DateTime" />
+            <Field name="date" size="1073741823" source="Formula: DateTimeFormat([current_date_time_utc], '%d-%m-%Y')" type="V_WString" />
+            <Field name="start_time" size="1073741823" source="Formula: DateTimeFormat(DateTimeAdd([current_date_time_utc],-1,'hours'),&quot;%H&quot;) + &quot;:00&quot;&#xA;" type="V_WString" />
+            <Field name="end_time" size="1073741823" source="Formula: DateTimeFormat(DateTimeAdd([current_date_time_utc],-1,'hours'),&quot;%H&quot;) + &quot;:59&quot;" type="V_WString" />
+            <Field name="output_file_name" size="1073741823" source="Formula: [date] + &quot;_&quot; + left([start_time], 2)" type="V_WString" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+            <Field name="JSON_Name" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field description="TextToColumns: Parsed from DownloadHeaders" name="DownloadHeaders1" size="2147483647" source="TextToColumns: Parsed from DownloadHeaders" type="V_String" />
+            <Field description="TextToColumns: Parsed from DownloadHeaders" name="DownloadHeaders2" size="2147483647" source="TextToColumns: Parsed from DownloadHeaders" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="base_url" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\alteryx_workflow_config.txt" type="V_WString" />
+            <Field name="Authorization" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\alteryx_workflow_config.txt" type="V_WString" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+            <Field name="current_date_time_utc" source="Formula: DateTimeToUTC(DateTimeNow())" type="DateTime" />
+            <Field name="date" size="1073741823" source="Formula: DateTimeFormat([current_date_time_utc], '%d-%m-%Y')" type="V_WString" />
+            <Field name="start_time" size="1073741823" source="Formula: DateTimeFormat(DateTimeAdd([current_date_time_utc],-1,'hours'),&quot;%H&quot;) + &quot;:00&quot;&#xA;" type="V_WString" />
+            <Field name="end_time" size="1073741823" source="Formula: DateTimeFormat(DateTimeAdd([current_date_time_utc],-1,'hours'),&quot;%H&quot;) + &quot;:59&quot;" type="V_WString" />
+            <Field name="output_file_name" size="1073741823" source="Formula: [date] + &quot;_&quot; + left([start_time], 2)" type="V_WString" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+            <Field name="JSON_Name" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field description="TextToColumns: Parsed from DownloadHeaders" name="DownloadHeaders1" size="2147483647" source="TextToColumns: Parsed from DownloadHeaders" type="V_String" />
+            <Field description="TextToColumns: Parsed from DownloadHeaders" name="DownloadHeaders2" size="2147483647" source="TextToColumns: Parsed from DownloadHeaders" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="62">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
+        <Position x="798" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Images />
+          <Output>Text</Output>
+          <HeaderMode value="False" />
+          <RawMode value="False" />
+          <ValidatePCXML value="True" />
+          <Message />
+          <RichTextMode value="True" />
+          <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\froman\fcharset238{\*\fname Arial;}Arial CE;}}
+\viewkind4\uc1\pard\lang1045\f0\fs24 [DownloadHeaders1:A]\par
+[JSON_ValueString]\par
+}
+]]></RichTextString>
+          <Styles>
+            <Style Name="TextStyle" />
+          </Styles>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Create a Notification Email</AnnotationText>
+          <DefaultAnnotationText>[DownloadHeaders1:A]
+[JSON_Val...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="base_url" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\config\api_header_config.txt" type="V_WString" />
+            <Field name="Authorization" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\config\api_header_config.txt" type="V_WString" />
+            <Field name="FileName" size="254" source="File: FileName" type="V_WString" />
+            <Field name="current_date_time_utc" source="Formula: DateTimeToUTC(DateTimeNow())" type="DateTime" />
+            <Field name="date" size="1073741823" source="Formula: DateTimeFormat([current_date_time_utc], '%d-%m-%Y')" type="V_WString" />
+            <Field name="start_time" size="1073741823" source="Formula: DateTimeFormat(DateTimeAdd([current_date_time_utc],-1,'hours'),&quot;%H&quot;) + &quot;:00&quot;&#xA;" type="V_WString" />
+            <Field name="end_time" size="1073741823" source="Formula: DateTimeFormat(DateTimeAdd([current_date_time_utc],-1,'hours'),&quot;%H&quot;) + &quot;:59&quot;" type="V_WString" />
+            <Field name="output_file_name" size="1073741823" source="Formula: [date] + &quot;_&quot; + left([start_time], 2) + &quot;.csv&quot;" type="V_WString" />
+            <Field name="DownloadHeaders" size="2147483647" source="Download" type="V_String" />
+            <Field name="JSON_Name" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="JSON_ValueString" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field description="TextToColumns: Parsed from DownloadHeaders" name="DownloadHeaders1" size="2147483647" source="TextToColumns: Parsed from DownloadHeaders" type="V_String" />
+            <Field description="TextToColumns: Parsed from DownloadHeaders" name="DownloadHeaders2" size="2147483647" source="TextToColumns: Parsed from DownloadHeaders" type="V_String" />
+            <Field name="Text" size="1073741823" source="Report:Text:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
+    </Node>
+    <Node ToolID="63">
+      <GuiSettings Plugin="PortfolioPluginsGui.Email.Email">
+        <Position x="942" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SMTPServerName>smtp.gmail.com</SMTPServerName>
+          <ToIsField value="False" />
+          <To>target_email_address@domain.com</To>
+          <CcIsField value="False" />
+          <Cc />
+          <BccIsField value="False" />
+          <Bcc />
+          <FromIsField value="False" />
+          <From>riven315@gmail.com</From>
+          <SubjectIsField value="False" />
+          <Subject>[Alcon Workshops] HTTP Request Failed</Subject>
+          <BodyIsField value="True" />
+          <Body>Text</Body>
+          <UserName>riven315@gmail.com</UserName>
+          <Enabled>True</Enabled>
+          <Password>4C78AB3C2311F14AAB1055CB21D5923D2209101EC12B49E70F5C045998F15F692FB20C87D0EFAED0C6734</Password>
+          <Port>465</Port>
+          <Encryption>SSL/TLS</Encryption>
+          <SMTPAuth value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxComposerEmail" />
+    </Node>
+    <Node ToolID="69">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="750" y="198" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Update Email</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="75">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="246" y="786" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="&quot;s3://&quot; + [s3_bucket_name] + &quot;/&quot; + [output_file_name]" field="s3_file_path" size="1073741823" type="V_WString" />
+            <FormulaField expression="'aws configure import --csv &quot;file://' + Replace([Engine.WorkflowDirectory], '\', '/') + '/config/alcon-workshops-s3-user-account_accessKeys.csv&quot; --profile aws_workshops_profile &gt; ./logs/config_log.txt 2&gt;&amp;1 || exit 0'" field="config_script" size="1073741823" type="V_WString" />
+            <FormulaField expression="&quot;aws s3 cp ./outputs/&quot; + [output_file_name] + &quot; &quot; + [s3_file_path] + &quot; --profile alcon-workshops-s3-user-account &gt; ./logs/upload_log.txt 2&gt;&amp;1 || exit 0&quot;" field="upload_script" size="1073741823" type="V_WString" />
+            <FormulaField expression="&quot;aws s3api head-object --bucket &quot; + [s3_bucket_name] + &quot; --key &quot; + [output_file_name] + &quot; --profile alcon-workshops-s3-user-account &gt; ./logs/control_log.txt 2&gt;&amp;1 || exit 0&quot;" field="control_script" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Create Scripts to Upload and List Files in S3</AnnotationText>
+          <DefaultAnnotationText>s3_file_path = "s3://" + [s3_bucket_name] + "/" + [output_file_name]
+config_scri...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="output_file_name" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="s3_bucket_name" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\config\s3_bucket_name.txt" type="V_String" />
+            <Field name="s3_file_path" size="1073741823" source="Formula: &quot;s3://&quot; + [s3_bucket_name] + &quot;/&quot; + [output_file_name]" type="V_WString" />
+            <Field name="config_script" size="1073741823" source="Formula: 'aws configure import --csv &quot;file://' + Replace([Engine.WorkflowDirectory], '\', '/') + '/config/alcon-workshops-s3-user-account_accessKeys.csv&quot; --profile aws_workshops_profile &gt; ./logs/config_log.txt 2&gt;&amp;1 || exit 0'" type="V_WString" />
+            <Field name="upload_script" size="1073741823" source="Formula: &quot;aws s3 cp ./outputs/&quot; + [output_file_name] + &quot; &quot; + [s3_file_path] + &quot; --profile alcon-workshops-s3-user-account &gt; ./logs/upload_log.txt 2&gt;&amp;1 || exit 0&quot;" type="V_WString" />
+            <Field name="control_script" size="1073741823" source="Formula: &quot;aws s3api head-object --bucket &quot; + [s3_bucket_name] + &quot; --key &quot; + [output_file_name] + &quot; --profile alcon-workshops-s3-user-account &gt; ./logs/control_log.txt 2&gt;&amp;1 || exit 0&quot;" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="78">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.TextBox.QuestionTextBox">
+        <Position x="870" y="90" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Please set your email address</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="79">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
+        <Position x="198" y="594" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <File MaxRecords="" FileFormat="0">./outputs/</File>
+          <Passwords />
+          <Disable>False</Disable>
+          <FormatSpecificOptions>
+            <LineEndStyle>CRLF</LineEndStyle>
+            <Delimeter>,</Delimeter>
+            <ForceQuotes>False</ForceQuotes>
+            <HeaderRow>True</HeaderRow>
+            <CodePage>28591</CodePage>
+            <WriteBOM>True</WriteBOM>
+          </FormatSpecificOptions>
+          <MultiFile value="True" />
+          <MultiFileType>Suffix</MultiFileType>
+          <MultiFileField>output_file_name</MultiFileField>
+          <KeepField value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileOutput" />
+    </Node>
+    <Node ToolID="80">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="78" y="714" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">.\config\s3_bucket_name.txt</File>
+          <FormatSpecificOptions>
+            <HeaderRow>True</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>\0</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Bucket Name</AnnotationText>
+          <DefaultAnnotationText>s3_bucket_name.txt</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="s3_bucket_name" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\config\s3_bucket_name.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="81">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="186" y="678" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="output_file_name" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="AGE" source="JSON_Parse" type="Int64" />
+            <Field name="DATE_DIED" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="FIRST_NAME" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="INGESTION_DATETIME" source="JSON_Parse" type="Date" />
+            <Field name="LAST_NAME" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="SEX" size="1073741823" source="JSON_Parse" type="V_WString" />
+            <Field name="FULL_NAME" size="1073741823" source="Formula: IF [AGE] &lt;= 21 THEN [FIRST_NAME] + &quot; &quot; + [LAST_NAME]&#xA;ELSEIF [SEX] == 'Male' Then 'Mr. ' + [FIRST_NAME] + &quot; &quot; + [LAST_NAME]&#xA;ELSE 'Mrs. ' + [FIRST_NAME] + &quot; &quot; + [LAST_NAME]&#xA;ENDIF" type="V_WString" />
+            <Field name="AGR_GROUP" size="1073741823" source="Formula: ToString(Floor([AGE] / 10) * 10) + &quot;-&quot; + ToString(Floor([AGE] / 10) * 10 + 9)&#xA;&#xA;" type="V_WString" />
+            <Field name="IS_DEAD" size="1073741823" source="Formula: IIF([DATE_DIED] == '9999-99-99', 'True', 'False')" type="V_WString" />
+            <Field name="s3_bucket_name" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\s3_bucket_name.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="87">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="426" y="750" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="upload_script" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="upload_script" size="1073741823" source="Formula: &quot;aws s3 cp ./outputs/&quot; + [output_file_name] + &quot; s3://&quot; + [s3_bucket_name] + &quot;/&quot; + [output_file_name] + &quot; --profile alcon-workshops-s3-user-account&quot;" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="89">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RunCommand.RunCommand">
+        <Position x="498" y="750" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OutputConfiguration>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">%temp%\upload_script.bat</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>\0</Delimeter>
+                <ForceQuotes>Never</ForceQuotes>
+                <HeaderRow>False</HeaderRow>
+                <CodePage>28591</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+          </OutputConfiguration>
+          <InputConfiguration>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">.\logs\upload_log.txt</File>
+              <FormatSpecificOptions>
+                <HeaderRow>False</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>\0</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+          </InputConfiguration>
+          <ProgramName>%temp%\upload_script.bat</ProgramName>
+          <Arguments />
+          <WorkingDir />
+          <RunMinimized value="True" />
+          <RunSilent value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Upload FIle</AnnotationText>
+          <DefaultAnnotationText>Run upload_script.bat</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\logs\upload_log.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRunCommand" />
+    </Node>
+    <Node ToolID="92">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="426" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="control_script" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="control_script" size="1073741823" source="Formula: &quot;aws s3api --profile aws_workshops_profile head-object --bucket&quot; + [s3_bucket_name] + &quot; --key &quot; + [output_file_name]" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="94">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RunCommand.RunCommand">
+        <Position x="510" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OutputConfiguration>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">%temp%\control_script.bat</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>\0</Delimeter>
+                <ForceQuotes>Never</ForceQuotes>
+                <HeaderRow>False</HeaderRow>
+                <CodePage>28591</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+          </OutputConfiguration>
+          <InputConfiguration>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">.\logs\control_log.txt</File>
+              <FormatSpecificOptions>
+                <HeaderRow>False</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>254</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>\0</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+          </InputConfiguration>
+          <ProgramName>%temp%\control_script.bat</ProgramName>
+          <Arguments />
+          <WorkingDir />
+          <RunMinimized value="True" />
+          <RunSilent value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Check the File Status</AnnotationText>
+          <DefaultAnnotationText>Run control_script.bat</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\logs\control_log.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRunCommand" />
+    </Node>
+    <Node ToolID="95">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="426" y="630" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="config_script" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="config_script" size="1073741823" source="Formula: 'aws configure import --csv &quot;file://' + Replace([Engine.WorkflowDirectory], '\', '/') + '/config/alcon-workshops-s3-user-account_accessKeys.csv&quot; --profile aws_workshops_profile'" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="97">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RunCommand.RunCommand">
+        <Position x="498" y="630" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OutputConfiguration>
+            <Configuration>
+              <File MaxRecords="" FileFormat="0">%temp%\config_script.bat</File>
+              <Passwords />
+              <Disable>False</Disable>
+              <FormatSpecificOptions>
+                <LineEndStyle>CRLF</LineEndStyle>
+                <Delimeter>\0</Delimeter>
+                <ForceQuotes>Never</ForceQuotes>
+                <HeaderRow>False</HeaderRow>
+                <CodePage>28591</CodePage>
+                <WriteBOM>True</WriteBOM>
+              </FormatSpecificOptions>
+              <MultiFile value="False" />
+            </Configuration>
+          </OutputConfiguration>
+          <InputConfiguration>
+            <Configuration>
+              <Passwords />
+              <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">.\logs\config_log.txt</File>
+              <FormatSpecificOptions>
+                <HeaderRow>False</HeaderRow>
+                <IgnoreErrors>False</IgnoreErrors>
+                <AllowShareWrite>False</AllowShareWrite>
+                <ImportLine>1</ImportLine>
+                <FieldLen>1000</FieldLen>
+                <SingleThreadRead>False</SingleThreadRead>
+                <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+                <Delimeter>\0</Delimeter>
+                <QuoteRecordBreak>False</QuoteRecordBreak>
+                <CodePage>28591</CodePage>
+              </FormatSpecificOptions>
+            </Configuration>
+          </InputConfiguration>
+          <ProgramName>%temp%\config_script.bat</ProgramName>
+          <Arguments />
+          <WorkingDir />
+          <RunMinimized value="True" />
+          <RunSilent value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Configure AWS CLI Account</AnnotationText>
+          <DefaultAnnotationText>Run config_script.bat</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="1000" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\logs\config_log.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRunCommand" />
+    </Node>
+    <Node ToolID="100">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="606" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\KN\AppData\Local\Temp\Engine_8240_92ad606a219b8a4eb938a25ef2f8e105_\Engine_8240_9a655f43fdcf1f4a97c43dd3826b29c8~.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="101">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="642" y="630" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!Contains([Field_1],"Successfully imported") AND !IsEmpty([Field_1])</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Check aws configure status</AnnotationText>
+          <DefaultAnnotationText>!Contains([Field_1],"Successfully imported") AND !IsEmpty([Field_1])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Field_1" size="1000" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\logs\config_log.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Field_1" size="1000" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\logs\config_log.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="103">
+      <GuiSettings Plugin="PortfolioPluginsGui.Email.Email">
+        <Position x="846" y="630" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SMTPServerName>smtp.gmail.com</SMTPServerName>
+          <ToIsField value="False" />
+          <To>target_email_address@domain.com</To>
+          <CcIsField value="False" />
+          <Cc />
+          <BccIsField value="False" />
+          <Bcc />
+          <FromIsField value="False" />
+          <From>riven315@gmail.com</From>
+          <SubjectIsField value="False" />
+          <Subject>[Alcon Workshops] AWS CLI Configuration Error - Action Required</Subject>
+          <BodyIsField value="True" />
+          <Body>Text</Body>
+          <UserName>riven315@gmail.com</UserName>
+          <Enabled>True</Enabled>
+          <Password>4B0A94746379597A18035974578EB2266FBD284F11EA63B0C667004659EEB8407BB732C13ADC0A41666FF</Password>
+          <Port>465</Port>
+          <Encryption>SSL/TLS</Encryption>
+          <SMTPAuth value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxComposerEmail" />
+    </Node>
+    <Node ToolID="104">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BlockUntilDone.BlockUntilDone">
+        <Position x="330" y="750" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="output_file_name" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="s3_bucket_name" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\config\s3_bucket_name.txt" type="V_String" />
+            <Field name="s3_file_path" size="1073741823" source="Formula: &quot;s3://&quot; + [s3_bucket_name] + &quot;/&quot; + [output_file_name]" type="V_WString" />
+            <Field name="config_script" size="1073741823" source="Formula: 'aws configure import --csv &quot;file://' + Replace([Engine.WorkflowDirectory], '\', '/') + '/config/alcon-workshops-s3-user-account_accessKeysP.csv&quot; --profile aws_workshops_profile &gt; ./logs/config_log.txt'" type="V_WString" />
+            <Field name="upload_script" size="1073741823" source="Formula: &quot;aws s3 cp ./outputs/&quot; + [output_file_name] + &quot; &quot; + [s3_file_path] + &quot; --profile alcon-workshops-s3-user-account &gt; ./logs/upload_log.txt&quot;" type="V_WString" />
+            <Field name="control_script" size="1073741823" source="Formula: &quot;aws s3api head-object --bucket &quot; + [s3_bucket_name] + &quot; --key &quot; + [output_file_name] + &quot; --profile alcon-workshops-s3-user-account &gt; ./logs/control_log.txt&quot;" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Output2">
+          <RecordInfo>
+            <Field name="output_file_name" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="s3_bucket_name" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\config\s3_bucket_name.txt" type="V_String" />
+            <Field name="s3_file_path" size="1073741823" source="Formula: &quot;s3://&quot; + [s3_bucket_name] + &quot;/&quot; + [output_file_name]" type="V_WString" />
+            <Field name="config_script" size="1073741823" source="Formula: 'aws configure import --csv &quot;file://' + Replace([Engine.WorkflowDirectory], '\', '/') + '/config/alcon-workshops-s3-user-account_accessKeysP.csv&quot; --profile aws_workshops_profile &gt; ./logs/config_log.txt'" type="V_WString" />
+            <Field name="upload_script" size="1073741823" source="Formula: &quot;aws s3 cp ./outputs/&quot; + [output_file_name] + &quot; &quot; + [s3_file_path] + &quot; --profile alcon-workshops-s3-user-account &gt; ./logs/upload_log.txt&quot;" type="V_WString" />
+            <Field name="control_script" size="1073741823" source="Formula: &quot;aws s3api head-object --bucket &quot; + [s3_bucket_name] + &quot; --key &quot; + [output_file_name] + &quot; --profile alcon-workshops-s3-user-account &gt; ./logs/control_log.txt&quot;" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Output3">
+          <RecordInfo>
+            <Field name="output_file_name" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="s3_bucket_name" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\config\s3_bucket_name.txt" type="V_String" />
+            <Field name="s3_file_path" size="1073741823" source="Formula: &quot;s3://&quot; + [s3_bucket_name] + &quot;/&quot; + [output_file_name]" type="V_WString" />
+            <Field name="config_script" size="1073741823" source="Formula: 'aws configure import --csv &quot;file://' + Replace([Engine.WorkflowDirectory], '\', '/') + '/config/alcon-workshops-s3-user-account_accessKeysP.csv&quot; --profile aws_workshops_profile &gt; ./logs/config_log.txt'" type="V_WString" />
+            <Field name="upload_script" size="1073741823" source="Formula: &quot;aws s3 cp ./outputs/&quot; + [output_file_name] + &quot; &quot; + [s3_file_path] + &quot; --profile alcon-workshops-s3-user-account &gt; ./logs/upload_log.txt&quot;" type="V_WString" />
+            <Field name="control_script" size="1073741823" source="Formula: &quot;aws s3api head-object --bucket &quot; + [s3_bucket_name] + &quot; --key &quot; + [output_file_name] + &quot; --profile alcon-workshops-s3-user-account &gt; ./logs/control_log.txt&quot;" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBlockUntilDone" />
+    </Node>
+    <Node ToolID="105">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="642" y="750" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>Contains</Operator>
+            <Field>Field_1</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2023-12-05 22:51:43</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>Completed</Operand>
+              <StartDate>2023-12-05 22:51:43</StartDate>
+              <EndDate>2023-12-05 22:51:43</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Contains([Field_1],"Completed")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\upload_log.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\upload_log.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="106">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
+        <Position x="894" y="750" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Images />
+          <HeaderMode value="True" />
+          <HeaderField>Table</HeaderField>
+          <Position>Above</Position>
+          <RawMode value="False" />
+          <ValidatePCXML value="True" />
+          <Message />
+          <RichTextMode value="True" />
+          <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1252\deff0\deflang1033{\fonttbl{\f0\froman\fcharset0 Arial;}}
+\viewkind4\uc1\pard\f0\fs24 Dear User, \par
+\par
+This automated message serves to inform you of recent file processing activities conducted by our system.\par
+\par
+Best regards,\par
+XYZ Team\par
+}
+]]></RichTextString>
+          <Styles>
+            <Style Name="TextStyle" />
+          </Styles>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Create a Notification Email</AnnotationText>
+          <DefaultAnnotationText>Dear User, 
+
+This automated me...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Table" size="1073741823" source="Report:Table:Basic:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
+    </Node>
+    <Node ToolID="107">
+      <GuiSettings Plugin="PortfolioPluginsGui.Email.Email">
+        <Position x="966" y="750" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SMTPServerName>smtp.gmail.com</SMTPServerName>
+          <ToIsField value="False" />
+          <To>target_email_address@domain.com</To>
+          <CcIsField value="False" />
+          <Cc />
+          <BccIsField value="False" />
+          <Bcc />
+          <FromIsField value="False" />
+          <From>riven315@gmail.com</From>
+          <SubjectIsField value="False" />
+          <Subject>[Alcon Workshops] File Processing Notification</Subject>
+          <BodyIsField value="True" />
+          <Body>Table</Body>
+          <UserName>riven315@gmail.com</UserName>
+          <Enabled>True</Enabled>
+          <Password>4B0A94746379597A18035974578EB2266FBD284F11EA63B0C667004659EEB8407BB732C13ADC0A41666FF</Password>
+          <Port>465</Port>
+          <Encryption>SSL/TLS</Encryption>
+          <SMTPAuth value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxComposerEmail" />
+    </Node>
+    <Node ToolID="108">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="1074" y="582" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Update Email</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="109">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="1074" y="702" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Update Email</AnnotationText>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="111">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Message.Message">
+        <Position x="570" y="630" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <When>Filter</When>
+          <Filter>!Contains([Field_1],"Successfully imported")</Filter>
+          <Type>Warning</Type>
+          <Priority>High</Priority>
+          <Transient>False</Transient>
+          <MessageExpression>'Configure Run Command Tool has resulted in error.'</MessageExpression>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="1000" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\logs\config_log.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMessage" />
+    </Node>
+    <Node ToolID="112">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="102" y="798" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="output_file_name" selected="True" />
+            <SelectField field="s3_bucket_name" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="output_file_name" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="s3_bucket_name" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\config\s3_bucket_name.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="114">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="102" y="894" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>First</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First 1 rows</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="output_file_name" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="s3_bucket_name" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\config\s3_bucket_name.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="115">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="750" y="750" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Source_s3_bucket_name" selected="False" input="Source_" />
+                <SelectField field="Source_config_script" selected="False" input="Source_" />
+                <SelectField field="Source_upload_script" selected="False" input="Source_" />
+                <SelectField field="Source_control_script" selected="False" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\logs\upload_log.txt" type="V_String" />
+            <Field name="output_file_name" size="1073741823" source="CrossTab:Group:First:" type="V_WString" />
+            <Field name="s3_file_path" size="1073741823" source="Formula: &quot;s3://&quot; + [s3_bucket_name] + &quot;/&quot; + [output_file_name]" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="116">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerText.PortfolioComposerText">
+        <Position x="750" y="630" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Images />
+          <Output>Text</Output>
+          <HeaderMode value="False" />
+          <RawMode value="False" />
+          <ValidatePCXML value="True" />
+          <Message />
+          <RichTextMode value="True" />
+          <RichTextString><![CDATA[{\rtf1\ansi\ansicpg1250\deff0\deflang1045{\fonttbl{\f0\fnil\fcharset238{\*\fname Arial;}Arial CE;}}
+{\colortbl ;\red0\green0\blue255;}
+\viewkind4\uc1\pard\f0\fs24 Dear User,\par
+\par
+We would like to notify you of an issue with your AWS CLI configuration.\par
+\par
+To address this matter, please follow the outlined steps:\par
+\par
+1. Make sure there's a file called "alcon-workshops-s3-user-account_accessKeys.csv" in /alteryx/config folder.\par
+2. Confirm that the file is a .CSV file with the following headers: User Name, Access key ID, Secret access key.\par
+3. Verify that the file adheres to the example below:\par
+\par
+User Name,Access key ID,Secret access key\par
+alcon-workshops-s3-user-account,AKIARPB2JWWSUOABCI6P,QWY9UWITSa3iWCgcVZlGwABCwgItXdXgZq9jlz+A\par
+\par
+4. If the issue persists, consider recreating your Access Key for the \i alcon-workshops-s3-user-account \i0 user using the AWS Console. For more information, visit:\par
+\par
+\cf1\ul <Link Managing access keys (console)|https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#Using_CreateAccessKey>\cf0\ulnone\par
+\par
+Best regards,\par
+XYZ Team\par
+}
+]]></RichTextString>
+          <Styles>
+            <Style Name="TextStyle" />
+          </Styles>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Sent email</AnnotationText>
+          <DefaultAnnotationText>Dear User,
+
+We would like to n...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="1000" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\logs\config_log.txt" type="V_String" />
+            <Field name="Text" size="1073741823" source="Report:Text:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTextPlugin" />
+    </Node>
+    <Node ToolID="117">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Message.Message">
+        <Position x="570" y="750" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <When>Filter</When>
+          <Filter>!Contains([Field_1],"Completed") AND !IsEmpty([Field_1]) AND !Contains([Field_1],"upload:")</Filter>
+          <Type>Warning</Type>
+          <Priority>High</Priority>
+          <Transient>False</Transient>
+          <MessageExpression>'Upload error. Please check configuration.'</MessageExpression>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\logs\upload_log.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMessage" />
+    </Node>
+    <Node ToolID="119">
+      <GuiSettings Plugin="PortfolioPluginsGui.ComposerTable.PortfolioComposerTable">
+        <Position x="822" y="750" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TableMode>Basic</TableMode>
+          <GroupingFields orderChanged="False" />
+          <Width>100%</Width>
+          <ShowHeader value="True" />
+          <ShowBarGraph value="False" />
+          <TableFields orderChanged="True">
+            <Field name="s3_file_path" selected="True" Alignment="Center" Alias="S3 Bucket Path" Width="" />
+            <Field name="output_file_name" selected="True" Alignment="Center" Alias="Output File Name" />
+            <Field name="Field_1" selected="True" Alignment="Center" Width="" Alias="Uploading details" />
+            <Field name="*Unknown" selected="True" Alignment="Right" />
+          </TableFields>
+          <TableStyles>
+            <Style Name="Data" Font="Arial" Size="8" TextColor="#000000" BackColor="#ffffff" AltColor="#f0f0f0" RowGroup="1" />
+            <Style Name="Header" Font="Arial" Size="10" TextColor="#000000" BackColor="#dbdbdb" />
+            <Style Name="Borders" Width="1" DataColor="#000000" HeaderColor="#000000" RowBorder="None" BasicColBorder="Default (Use Per Column Setting)" />
+            <Style Name="Table" CellPadding="0" ColumnPadding="0" TableBorder="true" Width="1" BorderColor="#000000" />
+          </TableStyles>
+          <StyleRules />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Basic Table</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Table" size="1073741823" source="Report:Table:Basic:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="PortfolioPluginsEngine.dll" EngineDllEntryPoint="AlteryxPortfolioComposerTablePlugin" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="60" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="True" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Output" />
+      <Destination ToolID="79" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="44" Connection="Output2" />
+      <Destination ToolID="81" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="80" Connection="Output" />
+      <Destination ToolID="81" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="60" Connection="Output" />
+      <Destination ToolID="61" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="61" Connection="False" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="61" Connection="True" />
+      <Destination ToolID="62" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="62" Connection="Output" />
+      <Destination ToolID="63" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="69" Connection="Action" />
+      <Destination ToolID="63" Connection="Action" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="75" Connection="Output" />
+      <Destination ToolID="104" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="75" Connection="Output" />
+      <Destination ToolID="115" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="105" Connection="True" />
+      <Destination ToolID="115" Connection="Targets" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="78" Connection="Question" />
+      <Destination ToolID="69" Connection="Question" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="78" Connection="Question" />
+      <Destination ToolID="108" Connection="Question" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="78" Connection="Question" />
+      <Destination ToolID="109" Connection="Question" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="81" Connection="Output" />
+      <Destination ToolID="112" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="87" Connection="Output" />
+      <Destination ToolID="89" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="89" Connection="Output" />
+      <Destination ToolID="117" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="92" Connection="Output" />
+      <Destination ToolID="94" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="94" Connection="Output" />
+      <Destination ToolID="100" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="95" Connection="Output" />
+      <Destination ToolID="97" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="97" Connection="Output" />
+      <Destination ToolID="111" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="101" Connection="True" />
+      <Destination ToolID="116" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="104" Connection="Output" />
+      <Destination ToolID="95" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="104" Connection="Output2" />
+      <Destination ToolID="87" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="104" Connection="Output3" />
+      <Destination ToolID="92" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="106" Connection="Output" />
+      <Destination ToolID="107" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="109" Connection="Action" />
+      <Destination ToolID="107" Connection="Action" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="108" Connection="Action" />
+      <Destination ToolID="103" Connection="Action" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="116" Connection="Output" />
+      <Destination ToolID="103" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="111" Connection="Output" />
+      <Destination ToolID="101" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="112" Connection="Output" />
+      <Destination ToolID="114" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="114" Connection="Output" />
+      <Destination ToolID="75" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="115" Connection="Output" />
+      <Destination ToolID="119" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="117" Connection="Output" />
+      <Destination ToolID="105" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="119" Connection="Output" />
+      <Destination ToolID="106" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <RunWithE2 value="True" />
+    <PredictiveToolsCodePage value="1252" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="True" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Text Box (78)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Main</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+      <WorkflowId value="69c0e471-ee67-4139-a4c1-115459c25b56" />
+      <Telemetry>
+        <PreviousWorkflowId value="9096de33-b3e5-46bc-9a0d-3c8ab9d99637" />
+        <OriginWorkflowId value="83eab157-b092-48e7-a3df-3551cf73e026" />
+      </Telemetry>
+      <PlatformWorkflowId value="" />
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+    <RuntimeProperties>
+      <Actions>
+        <NoCondition>
+          <Type>NoCondition</Type>
+          <Description>(Always Run)</Description>
+          <True>
+            <Action>
+              <Type>UpdateValue</Type>
+              <Description />
+              <ToolId value="69" />
+              <Mode>Simple</Mode>
+              <Variable />
+              <Replace value="True" />
+              <ReplaceText>target_email_address@domain.com</ReplaceText>
+              <Destination>63/To</Destination>
+            </Action>
+            <Action>
+              <Type>UpdateValue</Type>
+              <Description />
+              <ToolId value="108" />
+              <Mode>Simple</Mode>
+              <Variable />
+              <Replace value="True" />
+              <ReplaceText>target_email_address@domain.com</ReplaceText>
+              <Destination>103/To</Destination>
+            </Action>
+            <Action>
+              <Type>UpdateValue</Type>
+              <Description />
+              <ToolId value="109" />
+              <Mode>Simple</Mode>
+              <Variable />
+              <Replace value="True" />
+              <ReplaceText>target_email_address@domain.com</ReplaceText>
+              <Destination>107/To</Destination>
+            </Action>
+          </True>
+        </NoCondition>
+      </Actions>
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (22)</Name>
+          <ToolId value="22" />
+          <Questions>
+            <Question>
+              <Type>TextBox</Type>
+              <Description>Please set your email address</Description>
+              <Name>Text Box (78)</Name>
+              <ToolId value="78" />
+              <Default>reloging@wp.pl</Default>
+              <Password value="False" />
+              <Multiline value="False" />
+              <Hidden value="False" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Wizard</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="0" />
+      <MacroInputs />
+      <MacroOutputs />
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="79" Selected="True" />
+        <Tool ToolId="100" Selected="False" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

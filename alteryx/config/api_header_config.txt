@@ -1,0 +1,2 @@
+base_url,Authorization
+https://43bhzz3c3f.execute-api.us-east-1.amazonaws.com/v1/data/,Bearer 1q2w3e4r5t
