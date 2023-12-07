@@ -1,0 +1,2 @@
+sender_email_address="sender_email_address@gmail.com"
+recipient_email_address="recipient_email_address@gmail.com"
