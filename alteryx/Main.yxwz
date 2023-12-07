@@ -794,7 +794,7 @@ config_scri...</DefaultAnnotationText>
     </Node>
     <Node ToolID="79">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileOutput.DbFileOutput">
-        <Position x="198" y="594" />
+        <Position x="198" y="582" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -816,6 +816,7 @@ config_scri...</DefaultAnnotationText>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
+          <AnnotationText>First, save the file on the disk</AnnotationText>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -899,7 +900,7 @@ config_scri...</DefaultAnnotationText>
     </Node>
     <Node ToolID="87">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="426" y="750" />
+        <Position x="426" y="738" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -925,7 +926,7 @@ config_scri...</DefaultAnnotationText>
     </Node>
     <Node ToolID="89">
       <GuiSettings Plugin="AlteryxBasePluginsGui.RunCommand.RunCommand">
-        <Position x="498" y="750" />
+        <Position x="498" y="738" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -985,7 +986,7 @@ config_scri...</DefaultAnnotationText>
     </Node>
     <Node ToolID="92">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="426" y="882" />
+        <Position x="426" y="858" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1011,7 +1012,7 @@ config_scri...</DefaultAnnotationText>
     </Node>
     <Node ToolID="94">
       <GuiSettings Plugin="AlteryxBasePluginsGui.RunCommand.RunCommand">
-        <Position x="510" y="882" />
+        <Position x="510" y="858" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1147,9 +1148,6 @@ config_scri...</DefaultAnnotationText>
           <DefaultAnnotationText>Run config_script.bat</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Field_1" size="1000" source="File: D:\Kursy\Alcon\Alteryx AWS Terraform Project\alteryx\logs\config_log.txt" type="V_String" />
@@ -1160,11 +1158,11 @@ config_scri...</DefaultAnnotationText>
     </Node>
     <Node ToolID="100">
       <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-        <Position x="606" y="882" />
+        <Position x="606" y="858" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <TempFile>C:\Users\KN\AppData\Local\Temp\Engine_8240_92ad606a219b8a4eb938a25ef2f8e105_\Engine_8240_9a655f43fdcf1f4a97c43dd3826b29c8~.yxdb</TempFile>
+          <TempFile>C:\Users\KN\AppData\Local\Temp\Engine_7236_89e7501a53e73e498b78c61c54f2d6fa_\Engine_7236_41bf497347b74749bbaf6221959a1220~.yxdb</TempFile>
           <TempFileDataProfiling />
           <Layout>
             <ViewMode>Single</ViewMode>
@@ -1180,6 +1178,7 @@ config_scri...</DefaultAnnotationText>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
+          <AnnotationText>This is just for debugging purposes</AnnotationText>
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
@@ -1294,7 +1293,7 @@ config_scri...</DefaultAnnotationText>
     </Node>
     <Node ToolID="105">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="642" y="750" />
+        <Position x="642" y="738" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1317,6 +1316,7 @@ config_scri...</DefaultAnnotationText>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
           <DefaultAnnotationText>Contains([Field_1],"Completed")</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
@@ -1362,7 +1362,7 @@ XYZ Team\par
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <AnnotationText>Create a Notification Email</AnnotationText>
+          <AnnotationText><![CDATA[ ]]></AnnotationText>
           <DefaultAnnotationText>Dear User, 
 
 This automated me...</DefaultAnnotationText>
@@ -1378,7 +1378,7 @@ This automated me...</DefaultAnnotationText>
     </Node>
     <Node ToolID="107">
       <GuiSettings Plugin="PortfolioPluginsGui.Email.Email">
-        <Position x="966" y="750" />
+        <Position x="978" y="750" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1392,7 +1392,7 @@ This automated me...</DefaultAnnotationText>
           <FromIsField value="False" />
           <From>riven315@gmail.com</From>
           <SubjectIsField value="False" />
-          <Subject>[Alcon Workshops] File Processing Notification</Subject>
+          <Subject>[Alcon Workshops] Alteryx File Processing Notification</Subject>
           <BodyIsField value="True" />
           <Body>Table</Body>
           <UserName>riven315@gmail.com</UserName>
@@ -1466,7 +1466,7 @@ This automated me...</DefaultAnnotationText>
     </Node>
     <Node ToolID="112">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="102" y="798" />
+        <Position x="102" y="810" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1611,7 +1611,7 @@ We would like to n...</DefaultAnnotationText>
     </Node>
     <Node ToolID="117">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Message.Message">
-        <Position x="570" y="750" />
+        <Position x="570" y="738" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -1662,6 +1662,7 @@ We would like to n...</DefaultAnnotationText>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
+          <AnnotationText>Add file details to the email</AnnotationText>
           <DefaultAnnotationText>Basic Table</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
@@ -1956,7 +1957,7 @@ We would like to n...</DefaultAnnotationText>
               <Description>Please set your email address</Description>
               <Name>Text Box (78)</Name>
               <ToolId value="78" />
-              <Default>reloging@wp.pl</Default>
+              <Default>target_email_address@gmail.com</Default>
               <Password value="False" />
               <Multiline value="False" />
               <Hidden value="False" />

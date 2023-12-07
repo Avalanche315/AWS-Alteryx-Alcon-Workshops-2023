@@ -1,0 +1,9 @@
+{
+    "AcceptRanges": "bytes",
+    "LastModified": "2023-12-07T12:52:24+00:00",
+    "ContentLength": 14555,
+    "ETag": "\"2ae7177fd7b89b91147c5421f5958057\"",
+    "ContentType": "application/vnd.ms-excel",
+    "ServerSideEncryption": "AES256",
+    "Metadata": {}
+}

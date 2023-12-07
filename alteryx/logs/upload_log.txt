@@ -1,0 +1,1 @@
+Completed 14.2 KiB/14.2 KiB (11.5 KiB/s) with 1 file(s) remainingupload: outputs\07-12-2023_11.csv to s3://alcon-workshop-notification-101054002597/07-12-2023_11.csv
