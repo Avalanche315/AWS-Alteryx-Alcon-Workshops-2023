@@ -21,7 +21,7 @@ resource "aws_iam_access_key" "s3_bucket_user_key" {
   user = aws_iam_user.s3_bucket_user.name
 }
 
-resource "aws_iam_policy" "AlconWorkshopS3UserPolicy" {
+resource "aws_iam_policy" "s3_user_policy" {
   policy = jsonencode({
     "Version": "2012-10-17",
     "Statement": [
@@ -41,9 +41,9 @@ resource "aws_iam_policy" "AlconWorkshopS3UserPolicy" {
   })
 }
 
-resource "aws_iam_user_policy_attachment" "S3BucketPolicyAttachment" {
+resource "aws_iam_user_policy_attachment" "s3_user_policy_attachment" {
   user       = aws_iam_user.s3_bucket_user.name
-  policy_arn = aws_iam_policy.AlconWorkshopS3UserPolicy.arn
+  policy_arn = aws_iam_policy.s3_user_policy.arn
 }
 
 # Outputs
